@@ -8,7 +8,8 @@ type Query {
 }
 
 type Mutation {
-  addTodo(title: String!): Todo!
+  addTodo(title: String!): Todo!,
+  removeTodo(id: String!): Todo!
 }
 
 type Todo {

@@ -18,6 +18,15 @@ const resolvers = {
       const todo = { id: `todo-${idCount}`, title: title }
       todos.push(todo)
       return todo
+    },
+
+    removeTodo: (parent, { id }) => {
+      const todo = todos[todos.findIndex(todo => todo.id == id)]
+      todos.splice(todos.findIndex(todo => todo.id == id), 1)
+      return {
+        id: todo.id,
+        title: todo.title
+      }
     }
   }
 };
